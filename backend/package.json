@@ -1,0 +1,28 @@
+{
+  "name": "taskflow-backend",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc -w",
+    "clean": "rimraf dist",
+    "prestart": "npm run clean && npm run build",
+    "start": "func start",
+    "test": "jest",
+    "test:integration": "jest --testPathPattern=integration"
+  },
+  "dependencies": {
+    "@azure/cosmos": "^4.0.0",
+    "@azure/functions": "^4.0.0"
+  },
+  "devDependencies": {
+    "@types/jest": "^30.0.0",
+    "@types/node": "^20.x",
+    "jest": "^30.5.1",
+    "rimraf": "^5.0.0",
+    "ts-jest": "^29.4.12",
+    "typescript": "^5.4.5",
+    "zod": "^3.23.8"
+  },
+  "main": "dist/src/{index.js,functions/*.js}"
+}
