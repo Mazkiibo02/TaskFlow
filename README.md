@@ -161,7 +161,18 @@ npm run test:integration # Run schema format and CORS policy tests
 - [Azure Functions Core Tools](https://learn.microsoft.com/en-us/azure/azure-functions/functions-run-local) (`npm i -g azure-functions-core-tools@4`)
 - [Azure Cosmos DB Emulator](https://learn.microsoft.com/en-us/azure/cosmos-db/local-emulator) (or active Azure Cosmos DB connection string)
 
-### 1. Backend Setup
+### ⚡ All-in-One Command (From Project Root)
+You can run both the Backend API and Frontend Client concurrently with a single command from the project root:
+```bash
+# Install root, backend, and frontend dependencies in one go
+npm run install:all
+
+# Start both services concurrently
+npm run dev
+# API: http://localhost:7071 | Client: http://localhost:3000
+```
+
+### Manual Individual Setup
 ```bash
 cd backend
 npm install
