@@ -1,4 +1,4 @@
-# TaskFlow — Enterprise Task Management & Dynamic Schema Form Builder
+# TaskFlow - Enterprise Task Management & Dynamic Schema Form Builder
 
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.4-blue.svg?logo=typescript)](https://www.typescriptlang.org/)
 [![React](https://img.shields.io/badge/React-18-61dafb.svg?logo=react)](https://react.dev/)
