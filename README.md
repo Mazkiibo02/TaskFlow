@@ -10,6 +10,39 @@
 
 **TaskFlow** is a decoupled full-stack enterprise task management platform featuring a **BPMN-inspired Drag-and-Drop Form Builder**. It allows organization administrators to dynamically construct custom form layouts in real time, automatically propagating custom fields to task models and data grids without requiring database migrations or code redeployment.
 
+<details>
+<summary><b>🇮🇩 Baca Dokumentasi Bahasa Indonesia (Klik untuk membuka)</b></summary>
+<br />
+
+### Halo sobat coding dan para suhu sekalian! 👋
+
+Kenalin, ini **TaskFlow**, proyek *full-stack* yang saya racik untuk menjawab kebutuhan manajemen tugas kelas *enterprise* dengan kustomisasi form yang dinamis.
+
+Salah satu *problem* klasik yang sering kita temuin: tiap kali admin butuh kolom baru di task, biasanya kita sebagai *engineer* harus repot bikin migrasi database, ubah skema, dan *re-deploy* API. Nah, di TaskFlow ini saya bikin alurnya jadi anti-ribet. Admin tinggal *drag-and-drop* field yang dimau lewat kanvas visual, dan kolom tersebut langsung aktif serta siap dipakai tanpa perlu utak-atik database sama sekali.
+
+---
+
+#### ⚙️ Gimana Cara Kerjanya di Balik Layar?
+Buat urusan *tech stack*, di frontend saya pakai **React 18 + Microsoft Fluent UI v9** biar tampilannya kerasa *clean* dan punya standar *enterprise*. Fitur *drag-and-drop* form-nya saya percayakan ke `@dnd-kit` dengan inspirasi dari *form builder* ala BPMN.
+
+Di sisi backend, arsitekturnya dibuat *serverless* pakai **Azure Functions v4 (Node.js + TypeScript) + Azure Cosmos DB**. Kenapa pilih Cosmos DB? Sifat NoSQL-nya yang *schema-less* itu jadi kunci: field kustom yang baru Anda racik bisa langsung tersimpan rapi ke dokumen JSON tanpa perlu pusing mikirin migrasi tabel.
+
+---
+
+#### 🧪 Nggak Cuma "Yang Penting Jalan"
+Buat saya, kode yang bagus itu harus bisa dipertanggungjawabkan keamanannya dan gampang di-*maintain*. Makanya di sini saya pasang serangkaian pengujian:
+- **Unit Testing**: Mulai dari *hook debounce* sampai *service* task yang sudah diuji pakai mock Cosmos DB.
+- **Integration Testing**: Simulasi *workflow* komplit dari awal *load*, cari task, filter status, sampai ganti halaman paginasi.
+- **Aksesibilitas (A11y)**: Sudah diaudit pakai `jest-axe` supaya memenuhi standar WCAG AA (ramah navigasi keyboard dan *screen reader*).
+- **Keamanan & Error Handling**: Setiap data masuk disaring ketat pakai `Zod`, ada proteksi *whitelist* CORS, dan penanganan error dibuat terpusat pakai `AppError` biar nggak ngebocorin detail jeroan server ke user.
+
+---
+
+#### ☕ Ada Masukan atau Mau Ngobrol?
+Tentu proyek ini masih jauh dari kata sempurna. Kalau Anda atau para suhu menemukan celah arsitektur yang bisa dioptimasi, nemu *bug*, atau ada *best practice* yang terlewat, jangan ragu buat colek saya lewat *Pull Request* atau bikin *Issue* ya! Masukan dari Anda bakal sangat berharga buat perkembangan saya ke depan.
+
+</details>
+
 ---
 
 ## 🌟 Key Features
